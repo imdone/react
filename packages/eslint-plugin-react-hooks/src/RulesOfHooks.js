@@ -316,6 +316,7 @@ export default {
           // NOTE: We could report here that the hook is not reachable, but id:22
           // that would be redundant with more general "no unreachable"
           // lint rules.
+          // - <https://github.com/imdone/react/issues/2>
           if (!segment.reachable) {
             continue;
           }
