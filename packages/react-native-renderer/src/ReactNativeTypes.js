@@ -116,7 +116,7 @@ export type NativeMethodsMixinType = {
 type SecretInternalsType = {
   NativeMethodsMixin: NativeMethodsMixinType,
   computeComponentStackForErrorReporting(tag: number): string,
-  // TODO (bvaughn) Decide which additional types to expose here?
+  // TODO (bvaughn) Decide which additional types to expose here? id:188
   // And how much information to fill in for the above types.
 };
 
@@ -138,7 +138,7 @@ export type ReactNativeType = {
   ): any,
   unmountComponentAtNode(containerTag: number): any,
   unmountComponentAtNodeAndRemoveContainer(containerTag: number): any,
-  unstable_batchedUpdates: any, // TODO (bvaughn) Add types
+  unstable_batchedUpdates: any, // TODO (bvaughn) Add types id:107
 
   __SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED: SecretInternalsType,
 };

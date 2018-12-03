@@ -24,7 +24,7 @@ const omittedCloseTags = {
   source: true,
   track: true,
   wbr: true,
-  // NOTE: menuitem's close tag should be omitted, but that causes problems.
+  // NOTE: menuitem's close tag should be omitted, but that causes problems. id:95
 };
 
 export default omittedCloseTags;

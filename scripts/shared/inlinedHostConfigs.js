@@ -27,7 +27,7 @@ module.exports = [
   {
     shortName: 'art',
     entryPoints: ['react-art'],
-    isFlowTyped: false, // TODO: type it.
+    isFlowTyped: false, // TODO: type it. id:336
     isFizzSupported: false,
   },
   {

@@ -300,7 +300,7 @@ if (__DEV__ && replayFailedUnitOfWorkWithInvokeGuardedCallback) {
       typeof thrownValue.then === 'function'
     ) {
       // Don't replay promises. Treat everything else like an error.
-      // TODO: Need to figure out a different strategy if/when we add
+      // TODO: Need to figure out a different strategy if/when we add id:142
       // support for catching other types.
       return;
     }
@@ -424,7 +424,7 @@ function commitAllHostEffects() {
         commitPlacement(nextEffect);
         // Clear the "placement" from effect tag so that we know that this is inserted, before
         // any life-cycles like componentDidMount gets called.
-        // TODO: findDOMNode doesn't rely on this any more but isMounted
+        // TODO: findDOMNode doesn't rely on this any more but isMounted id:242
         // does and isMounted is deprecated anyway so we should be able
         // to kill this.
         nextEffect.effectTag &= ~Placement;
@@ -787,7 +787,7 @@ function commitRoot(root: FiberRoot, finishedWork: Fiber): void {
     // we enter rootWithPendingPassiveEffects commit phase before then.
     let callback = commitPassiveEffects.bind(null, root, firstEffect);
     if (enableSchedulerTracing) {
-      // TODO: Avoid this extra callback by mutating the tracing ref directly,
+      // TODO: Avoid this extra callback by mutating the tracing ref directly, id:318
       // like we do at the beginning of commitRoot. I've opted not to do that
       // here because that code is still in flux.
       callback = Schedule_tracing_wrap(callback);
@@ -1122,7 +1122,7 @@ function completeUnitOfWork(workInProgress: Fiber): Fiber | null {
   }
 
   // Without this explicit null return Flow complains of invalid return type
-  // TODO Remove the above while(true) loop
+  // TODO Remove the above while(true) loop id:229
   // eslint-disable-next-line no-unreachable
   return null;
 }
@@ -1334,7 +1334,7 @@ function renderRoot(root: FiberRoot, isYieldy: boolean): void {
           }
         }
 
-        // TODO: we already know this isn't true in some cases.
+        // TODO: we already know this isn't true in some cases. id:135
         // At least this shows a nicer error message until we figure out the cause.
         // https://github.com/facebook/react/issues/12449#issuecomment-386727431
         invariant(
@@ -1493,7 +1493,7 @@ function renderRoot(root: FiberRoot, isYieldy: boolean): void {
     let msUntilTimeout = nextLatestAbsoluteTimeoutMs - currentTimeMs;
     msUntilTimeout = msUntilTimeout < 0 ? 0 : msUntilTimeout;
 
-    // TODO: Account for the Just Noticeable Difference
+    // TODO: Account for the Just Noticeable Difference id:146
 
     const rootExpirationTime = root.expirationTime;
     onSuspend(
@@ -1666,7 +1666,7 @@ function retrySuspendedRoot(
     markPendingPriorityLevel(root, retryTime);
   }
 
-  // TODO: If the suspense fiber has already rendered the primary children
+  // TODO: If the suspense fiber has already rendered the primary children id:244
   // without suspending (that is, all of the promises have already resolved),
   // we should not trigger another update here. One case this happens is when
   // we are in sync mode and a single promise is thrown both on initial render
@@ -1873,7 +1873,7 @@ function syncUpdates<A, B, C0, D, R>(
   }
 }
 
-// TODO: Everything below this is written as if it has been lifted to the
+// TODO: Everything below this is written as if it has been lifted to the id:319
 // renderers. I'll do this in a follow-up.
 
 // Linked-list of roots
@@ -2064,7 +2064,7 @@ function requestWork(root: FiberRoot, expirationTime: ExpirationTime) {
     return;
   }
 
-  // TODO: Get rid of Sync and use current time?
+  // TODO: Get rid of Sync and use current time? id:231
   if (expirationTime === Sync) {
     performSyncWork();
   } else {
@@ -2107,7 +2107,7 @@ function findHighestPriorityRoot() {
       if (remainingExpirationTime === NoWork) {
         // This root no longer has work. Remove it from the scheduler.
 
-        // TODO: This check is redudant, but Flow is confused by the branch
+        // TODO: This check is redudant, but Flow is confused by the branch id:137
         // below where we set lastScheduledRoot to null, even though we break
         // from the loop right after.
         invariant(
@@ -2161,7 +2161,7 @@ function findHighestPriorityRoot() {
   nextFlushedExpirationTime = highestPriorityWork;
 }
 
-// TODO: This wrapper exists because many of the older tests (the ones that use
+// TODO: This wrapper exists because many of the older tests (the ones that use id:150
 // flushDeferredPri) rely on the number of times `shouldYield` is called. We
 // should get rid of it.
 let didYield: boolean = false;
@@ -2325,7 +2325,7 @@ function performWorkOnRoot(
   // Check if this is async work or sync/expired work.
   if (!isYieldy) {
     // Flush work without yielding.
-    // TODO: Non-yieldy work does not necessarily imply expired work. A renderer
+    // TODO: Non-yieldy work does not necessarily imply expired work. A renderer id:246
     // may want to perform some work without yielding, but also without
     // requiring the root to complete (by triggering placeholders).
 
@@ -2440,7 +2440,7 @@ function onUncaughtError(error: mixed) {
   }
 }
 
-// TODO: Batching should be implemented at the renderer level, not inside
+// TODO: Batching should be implemented at the renderer level, not inside id:320
 // the reconciler.
 function batchedUpdates<A, R>(fn: (a: A) => R, a: A): R {
   const previousIsBatchingUpdates = isBatchingUpdates;
@@ -2455,7 +2455,7 @@ function batchedUpdates<A, R>(fn: (a: A) => R, a: A): R {
   }
 }
 
-// TODO: Batching should be implemented at the renderer level, not inside
+// TODO: Batching should be implemented at the renderer level, not inside id:233
 // the reconciler.
 function unbatchedUpdates<A, R>(fn: (a: A) => R, a: A): R {
   if (isBatchingUpdates && !isUnbatchingUpdates) {
@@ -2469,7 +2469,7 @@ function unbatchedUpdates<A, R>(fn: (a: A) => R, a: A): R {
   return fn(a);
 }
 
-// TODO: Batching should be implemented at the renderer level, not within
+// TODO: Batching should be implemented at the renderer level, not within id:139
 // the reconciler.
 function flushSync<A, R>(fn: (a: A) => R, a: A): R {
   invariant(

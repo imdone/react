@@ -614,7 +614,7 @@ describe('ReactIncrementalSideEffects', () => {
     // To confirm, perform one more unit of work. The tree should now be flushed.
     // (ReactNoop decrements the time remaining by 5 *before* returning it from
     // the deadline, so to perform n units of work, you need to give it 5n + 5.
-    // TODO: This is confusing. Decrement it after.)
+    // TODO: This is confusing. Decrement it after.) id:160
     ReactNoop.flushDeferredPri(10);
     expect(ReactNoop.getChildren()).toEqual([span(1)]);
 
@@ -944,7 +944,7 @@ describe('ReactIncrementalSideEffects', () => {
 
     // This should not be enough time to render the content of all the hidden
     // items. Including the set state since that is deprioritized.
-    // TODO: The cycles it takes to do this could be lowered with further
+    // TODO: The cycles it takes to do this could be lowered with further id:252
     // optimizations.
     ReactNoop.flushDeferredPri(35);
     expect(ReactNoop.getChildrenAsJSX()).toEqual(
@@ -980,7 +980,7 @@ describe('ReactIncrementalSideEffects', () => {
 
     expect(ops).toEqual(['Bar', 'Bar', 'Bar']);
   });
-  // TODO: Test that side-effects are not cut off when a work in progress node
+  // TODO: Test that side-effects are not cut off when a work in progress node id:323
   // moves to "current" without flushing due to having lower priority. Does this
   // even happen? Maybe a child doesn't get processed because it is lower prio?
 
@@ -1036,7 +1036,7 @@ describe('ReactIncrementalSideEffects', () => {
     expect(called).toBe(true);
   });
 
-  // TODO: Test that callbacks are not lost if an update is preempted.
+  // TODO: Test that callbacks are not lost if an update is preempted. id:239
 
   it('calls componentWillUnmount after a deletion, even if nested', () => {
     const ops = [];
@@ -1239,7 +1239,7 @@ describe('ReactIncrementalSideEffects', () => {
     ]);
   });
 
-  // TODO: Test that mounts, updates, refs, unmounts and deletions happen in the
+  // TODO: Test that mounts, updates, refs, unmounts and deletions happen in the id:147
   // expected way for aborted and resumed render life-cycles.
 
   it('supports string refs', () => {

@@ -28,7 +28,7 @@ describe('create-react-class-integration', () => {
     );
   });
 
-  // TODO (RFC #6) Merge this back into createReactClassIntegration-test once
+  // TODO (RFC #6) Merge this back into createReactClassIntegration-test once id:164
   // the 'warnAboutDeprecatedLifecycles' feature flag has been removed.
   it('isMounted works', () => {
     const ReactDOM = require('react-dom');

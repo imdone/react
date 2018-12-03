@@ -7,7 +7,7 @@
  * @emails react-core
  */
 
-// NOTE: We're explicitly not using JSX here. This is intended to test
+// NOTE: We're explicitly not using JSX here. This is intended to test id:34
 // the current stack addendum without having source location added by babel.
 
 'use strict';

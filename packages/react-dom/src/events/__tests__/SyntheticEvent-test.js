@@ -326,7 +326,7 @@ describe('SyntheticEvent', () => {
     );
   });
 
-  // TODO: we might want to re-add a warning like this in the future,
+  // TODO: we might want to re-add a warning like this in the future, id:158
   // but it shouldn't use Proxies because they make debugging difficult.
   // Or we might disallow this pattern altogether:
   // https://github.com/facebook/react/issues/13224

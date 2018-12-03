@@ -33,7 +33,7 @@ const callbackBookkeepingPool = [];
  * other). If React trees are not nested, returns null.
  */
 function findRootContainerNode(inst) {
-  // TODO: It may be a good idea to cache this to prevent unnecessary DOM
+  // TODO: It may be a good idea to cache this to prevent unnecessary DOM id:292
   // traversal, but caching is difficult to do correctly without using a
   // mutation observer to listen for all DOM changes.
   while (inst.return) {
@@ -114,7 +114,7 @@ function handleTopLevel(bookKeeping) {
   }
 }
 
-// TODO: can we stop exporting these?
+// TODO: can we stop exporting these? id:154
 export let _enabled = true;
 
 export function setEnabled(enabled: ?boolean) {

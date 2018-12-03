@@ -238,7 +238,7 @@ function prepareToHydrateHostInstance(
     hostContext,
     fiber,
   );
-  // TODO: Type this specific to this type of component.
+  // TODO: Type this specific to this type of component. id:129
   fiber.updateQueue = (updatePayload: any);
   // If the update payload indicates that there is a change or if there
   // is a new ref we mark this as an update.
@@ -332,7 +332,7 @@ function popHydrationState(fiber: Fiber): boolean {
   // We only do this deeper than head and body since they tend to have random
   // other nodes in them. We also ignore components with pure text content in
   // side of them.
-  // TODO: Better heuristic.
+  // TODO: Better heuristic. id:138
   if (
     fiber.tag !== HostComponent ||
     (type !== 'head' &&

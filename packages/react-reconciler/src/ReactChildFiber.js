@@ -267,7 +267,7 @@ function ChildReconciler(shouldTrackSideEffects) {
       return null;
     }
 
-    // TODO: For the shouldClone case, this could be micro-optimized a bit by
+    // TODO: For the shouldClone case, this could be micro-optimized a bit by id:307
     // assuming that after the first child we've already added everything.
     let childToDelete = currentFirstChild;
     while (childToDelete !== null) {
@@ -784,7 +784,7 @@ function ChildReconciler(shouldTrackSideEffects) {
         expirationTime,
       );
       if (newFiber === null) {
-        // TODO: This breaks on empty slots like null children. That's
+        // TODO: This breaks on empty slots like null children. That's id:194
         // unfortunate because it triggers the slow path all the time. We need
         // a better way to communicate whether this was a miss or null,
         // boolean, undefined, etc.
@@ -802,10 +802,10 @@ function ChildReconciler(shouldTrackSideEffects) {
       }
       lastPlacedIndex = placeChild(newFiber, lastPlacedIndex, newIdx);
       if (previousNewFiber === null) {
-        // TODO: Move out of the loop. This only happens for the first run.
+        // TODO: Move out of the loop. This only happens for the first run. id:113
         resultingFirstChild = newFiber;
       } else {
-        // TODO: Defer siblings if we're not at the right index for this slot.
+        // TODO: Defer siblings if we're not at the right index for this slot. id:122
         // I.e. if we had null values before, then we want to defer this
         // for each null value. However, we also don't want to call updateSlot
         // with the previous one.
@@ -835,7 +835,7 @@ function ChildReconciler(shouldTrackSideEffects) {
         }
         lastPlacedIndex = placeChild(newFiber, lastPlacedIndex, newIdx);
         if (previousNewFiber === null) {
-          // TODO: Move out of the loop. This only happens for the first run.
+          // TODO: Move out of the loop. This only happens for the first run. id:219
           resultingFirstChild = newFiber;
         } else {
           previousNewFiber.sibling = newFiber;
@@ -977,7 +977,7 @@ function ChildReconciler(shouldTrackSideEffects) {
         expirationTime,
       );
       if (newFiber === null) {
-        // TODO: This breaks on empty slots like null children. That's
+        // TODO: This breaks on empty slots like null children. That's id:308
         // unfortunate because it triggers the slow path all the time. We need
         // a better way to communicate whether this was a miss or null,
         // boolean, undefined, etc.
@@ -995,10 +995,10 @@ function ChildReconciler(shouldTrackSideEffects) {
       }
       lastPlacedIndex = placeChild(newFiber, lastPlacedIndex, newIdx);
       if (previousNewFiber === null) {
-        // TODO: Move out of the loop. This only happens for the first run.
+        // TODO: Move out of the loop. This only happens for the first run. id:196
         resultingFirstChild = newFiber;
       } else {
-        // TODO: Defer siblings if we're not at the right index for this slot.
+        // TODO: Defer siblings if we're not at the right index for this slot. id:115
         // I.e. if we had null values before, then we want to defer this
         // for each null value. However, we also don't want to call updateSlot
         // with the previous one.
@@ -1024,7 +1024,7 @@ function ChildReconciler(shouldTrackSideEffects) {
         }
         lastPlacedIndex = placeChild(newFiber, lastPlacedIndex, newIdx);
         if (previousNewFiber === null) {
-          // TODO: Move out of the loop. This only happens for the first run.
+          // TODO: Move out of the loop. This only happens for the first run. id:124
           resultingFirstChild = newFiber;
         } else {
           previousNewFiber.sibling = newFiber;
@@ -1114,7 +1114,7 @@ function ChildReconciler(shouldTrackSideEffects) {
     const key = element.key;
     let child = currentFirstChild;
     while (child !== null) {
-      // TODO: If key === null and child.key === null, then this only applies to
+      // TODO: If key === null and child.key === null, then this only applies to id:222
       // the first item in the list.
       if (child.key === key) {
         if (
@@ -1177,7 +1177,7 @@ function ChildReconciler(shouldTrackSideEffects) {
     const key = portal.key;
     let child = currentFirstChild;
     while (child !== null) {
-      // TODO: If key === null and child.key === null, then this only applies to
+      // TODO: If key === null and child.key === null, then this only applies to id:309
       // the first item in the list.
       if (child.key === key) {
         if (

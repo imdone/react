@@ -48,7 +48,7 @@ describe('ReactDOMServerLifecycles', () => {
     );
   });
 
-  // TODO (RFC #6) Merge this back into ReactDOMServerLifecycles-test once
+  // TODO (RFC #6) Merge this back into ReactDOMServerLifecycles-test once id:39
   // the 'warnAboutDeprecatedLifecycles' feature flag has been removed.
   it('should warn about deprecated lifecycle hooks', () => {
     class Component extends React.Component {

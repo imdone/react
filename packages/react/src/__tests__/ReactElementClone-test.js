@@ -23,7 +23,7 @@ describe('ReactElementClone', () => {
     ReactDOM = require('react-dom');
     ReactTestUtils = require('react-dom/test-utils');
 
-    // NOTE: We're explicitly not using JSX here. This is intended to test
+    // NOTE: We're explicitly not using JSX here. This is intended to test id:264
     // classic JS without JSX.
     ComponentClass = class extends React.Component {
       render() {

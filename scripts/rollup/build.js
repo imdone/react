@@ -372,7 +372,7 @@ function getPlugins(
           renaming: !shouldStayReadable,
         })
       ),
-    // HACK to work around the fact that Rollup isn't removing unused, pure-module imports.
+    // HACK to work around the fact that Rollup isn't removing unused, pure-module imports. id:263
     // Note that this plugin must be called after closure applies DCE.
     isProduction && stripUnusedImports(pureExternalModules),
     // Add the whitespace back if necessary.

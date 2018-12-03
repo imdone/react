@@ -31,7 +31,7 @@
 
 //////////////////////////////////////////////////////////////////////
 
-// TODO: does clang define __GNUC__ ?
+// TODO: does clang define __GNUC__ ? id:272
 #ifndef __GNUC__
 # define __attribute__(x)
 #endif
@@ -130,7 +130,7 @@
 
 #elif defined(_M_X64)
 
-// TODO: FIXME! Without this implemented properly, the JIT
+// TODO: FIXME! Without this implemented properly, the JIT id:335
 // will fail "pretty spectacularly".
 # define DECLARE_FRAME_POINTER(fp) \
   always_assert(false);            \

@@ -82,7 +82,7 @@ function findNodeHandle(componentOrHandle: any): ?number {
   if (hostInstance == null) {
     return hostInstance;
   }
-  // TODO: the code is right but the types here are wrong.
+  // TODO: the code is right but the types here are wrong. id:108
   // https://github.com/facebook/react/pull/12863
   if ((hostInstance: any).canonical) {
     // Fabric
@@ -108,7 +108,7 @@ const ReactFabric: ReactFabricType = {
     let root = roots.get(containerTag);
 
     if (!root) {
-      // TODO (bvaughn): If we decide to keep the wrapper component,
+      // TODO (bvaughn): If we decide to keep the wrapper component, id:200
       // We could create a wrapper for containerTag as well to reduce special casing.
       root = createContainer(containerTag, false, false);
       roots.set(containerTag, root);
@@ -121,7 +121,7 @@ const ReactFabric: ReactFabricType = {
   unmountComponentAtNode(containerTag: number) {
     const root = roots.get(containerTag);
     if (root) {
-      // TODO: Is it safe to reset this now or should I wait since this unmount could be deferred?
+      // TODO: Is it safe to reset this now or should I wait since this unmount could be deferred? id:301
       updateContainer(null, root, null, () => {
         roots.delete(containerTag);
       });

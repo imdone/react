@@ -670,7 +670,7 @@ function finishClassComponent(
     // unmount all the children. componentDidCatch will schedule an update to
     // re-render a fallback. This is temporary until we migrate everyone to
     // the new API.
-    // TODO: Warn in a future release.
+    // TODO: Warn in a future release. id:128
     nextChildren = null;
 
     if (enableProfilerTimer) {
@@ -716,7 +716,7 @@ function finishClassComponent(
   }
 
   // Memoize state using the values we just used to render.
-  // TODO: Restructure so we never read values from the instance.
+  // TODO: Restructure so we never read values from the instance. id:228
   workInProgress.memoizedState = instance.state;
 
   // The context might have changed so we need to recalculate it.
@@ -789,7 +789,7 @@ function updateHostRoot(current, workInProgress, renderExpirationTime) {
     // This is a bit of a hack. We track the host root as a placement to
     // know that we're currently in a mounting state. That way isMounted
     // works as expected. We must reset this before committing.
-    // TODO: Delete this when we delete isMounted and findDOMNode.
+    // TODO: Delete this when we delete isMounted and findDOMNode. id:311
     workInProgress.effectTag |= Placement;
 
     // Ensure that children mount into this root without tracking
@@ -1395,7 +1395,7 @@ function updateSuspenseComponent(
         // If this render doesn't suspend, we need to delete the fallback
         // children. Wait until the complete phase, after we've confirmed the
         // fallback is no longer needed.
-        // TODO: Would it be better to store the fallback fragment on
+        // TODO: Would it be better to store the fallback fragment on id:207
         // the stateNode?
 
         // Continue rendering the children, like we normally do.
@@ -1493,7 +1493,7 @@ function updatePortalComponent(
     // but at commit. Therefore we need to track insertions which the normal
     // flow doesn't do during mount. This doesn't happen at the root because
     // the root always starts with a "current" with a null child.
-    // TODO: Consider unifying this with how the root works.
+    // TODO: Consider unifying this with how the root works. id:121
     workInProgress.child = reconcileChildFibers(
       workInProgress,
       null,
@@ -1658,7 +1658,7 @@ function bailoutOnAlreadyFinishedWork(
   const childExpirationTime = workInProgress.childExpirationTime;
   if (childExpirationTime < renderExpirationTime) {
     // The children don't have any work either. We can skip them.
-    // TODO: Once we add back resuming, we should check if the children are
+    // TODO: Once we add back resuming, we should check if the children are id:130
     // a work-in-progress set. If so, we need to transfer their effects.
     return null;
   } else {

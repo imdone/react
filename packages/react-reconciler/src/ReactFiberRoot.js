@@ -18,7 +18,7 @@ import {NoWork} from './ReactFiberExpirationTime';
 import {enableSchedulerTracing} from 'shared/ReactFeatureFlags';
 import {unstable_getThreadID} from 'scheduler/tracing';
 
-// TODO: This should be lifted into the renderer.
+// TODO: This should be lifted into the renderer. id:317
 export type Batch = {
   _defer: boolean,
   _expirationTime: ExpirationTime,
@@ -68,12 +68,12 @@ type BaseFiberRootProperties = {|
   // Determines if we should attempt to hydrate on the initial mount
   +hydrate: boolean,
   // Remaining expiration time on this root.
-  // TODO: Lift this into the renderer
+  // TODO: Lift this into the renderer id:226
   nextExpirationTimeToWorkOn: ExpirationTime,
   expirationTime: ExpirationTime,
   // List of top-level batches. This list indicates whether a commit should be
   // deferred. Also contains completion callbacks.
-  // TODO: Lift this into the renderer
+  // TODO: Lift this into the renderer id:133
   firstBatch: Batch | null,
   // Linked-list of roots
   nextScheduledRoot: FiberRoot | null,

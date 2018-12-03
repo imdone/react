@@ -173,7 +173,7 @@ describe('ReactSuspense', () => {
     // switches back to the normal view. The second Suspense should still
     // show the placeholder
     jest.advanceTimersByTime(1000);
-    // TODO: Should we throw if you forget to call toHaveYielded?
+    // TODO: Should we throw if you forget to call toHaveYielded? id:163
     expect(ReactTestRenderer).toHaveYielded(['Promise resolved [A]']);
     expect(root).toFlushAndYield(['A']);
     expect(root).toMatchRenderedOutput('ALoading B...');
@@ -736,7 +736,7 @@ describe('ReactSuspense', () => {
         'Promise resolved [Child 2]',
         'Child 2',
         'Suspend! [Child 3]',
-        // TODO: This suspends twice because there were two pings, once for each
+        // TODO: This suspends twice because there were two pings, once for each id:254
         // time Child 2 suspended. This is only an issue in sync mode because
         // pings aren't batched.
         'Suspend! [Child 3]',

@@ -157,11 +157,11 @@ if (supportsMutation) {
 
     // If we get updated because one of our children updated, we don't
     // have newProps so we'll have to reuse them.
-    // TODO: Split the update API as separate for the props vs. children.
+    // TODO: Split the update API as separate for the props vs. children. id:214
     // Even better would be if children weren't special cased at all tho.
     const instance: Instance = workInProgress.stateNode;
     const currentHostContext = getHostContext();
-    // TODO: Experiencing an error where oldProps is null. Suggests a host
+    // TODO: Experiencing an error where oldProps is null. Suggests a host id:125
     // component is hitting the resume path. Figure out why. Possibly
     // related to `hidden`.
     const updatePayload = prepareUpdate(
@@ -172,7 +172,7 @@ if (supportsMutation) {
       rootContainerInstance,
       currentHostContext,
     );
-    // TODO: Type this specific to this type of component.
+    // TODO: Type this specific to this type of component. id:134
     workInProgress.updateQueue = (updatePayload: any);
     // If the update payload indicates that there is a change or if there
     // is a new ref we mark this as an update. All the work is done in commitWork.
@@ -572,7 +572,7 @@ function completeWork(
         // that weren't hydrated.
         popHydrationState(workInProgress);
         // This resets the hacky state to fix isMounted before committing.
-        // TODO: Delete this when we delete isMounted and findDOMNode.
+        // TODO: Delete this when we delete isMounted and findDOMNode. id:234
         workInProgress.effectTag &= ~Placement;
       }
       updateHostContainer(workInProgress);
@@ -606,13 +606,13 @@ function completeWork(
         }
 
         const currentHostContext = getHostContext();
-        // TODO: Move createInstance to beginWork and keep it on a context
+        // TODO: Move createInstance to beginWork and keep it on a context id:314
         // "stack" as the parent. Then append children as we go in beginWork
         // or completeWork depending on we want to add then top->down or
         // bottom->up. Top->down is faster in IE11.
         let wasHydrated = popHydrationState(workInProgress);
         if (wasHydrated) {
-          // TODO: Move this and createInstance step into the beginPhase
+          // TODO: Move this and createInstance step into the beginPhase id:217
           // to consolidate.
           if (
             prepareToHydrateHostInstance(
@@ -711,7 +711,7 @@ function completeWork(
       if (current !== null && !nextDidTimeout && prevDidTimeout) {
         // We just switched from the fallback to the normal children. Delete
         // the fallback.
-        // TODO: Would it be better to store the fallback fragment on
+        // TODO: Would it be better to store the fallback fragment on id:127
         // the stateNode during the begin phase?
         const currentFallbackChild: Fiber | null = (current.child: any).sibling;
         if (currentFallbackChild !== null) {

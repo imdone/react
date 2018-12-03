@@ -79,11 +79,11 @@ function getLifeCycleState(instance): ComponentLifeCycle {
 }
 
 /**
- * TODO: We should make any setState calls fail in
- * `getInitialState` and `componentWillMount`. They will usually fail
- * anyways because `this._renderedComponent` is empty, however, if a component
- * is *reused*, then that won't be the case and things will appear to work in
- * some cases. Better to just block all updates in initialization.
+ * TODO: We should make any setState calls fail in id:31
+* `getInitialState` and `componentWillMount`. They will usually fail
+* anyways because `this._renderedComponent` is empty, however, if a component
+* is *reused*, then that won't be the case and things will appear to work in
+* some cases. Better to just block all updates in initialization.
  */
 describe('ReactComponentLifeCycle', () => {
   beforeEach(() => {

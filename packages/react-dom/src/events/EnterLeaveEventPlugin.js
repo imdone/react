@@ -74,7 +74,7 @@ const EnterLeaveEventPlugin = {
       // `nativeEventTarget` is probably a window object.
       win = nativeEventTarget;
     } else {
-      // TODO: Figure out why `ownerDocument` is sometimes undefined in IE8.
+      // TODO: Figure out why `ownerDocument` is sometimes undefined in IE8. id:181
       const doc = nativeEventTarget.ownerDocument;
       if (doc) {
         win = doc.defaultView || doc.parentWindow;

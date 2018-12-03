@@ -12,7 +12,7 @@
 
 const BatchedBridge = require('BatchedBridge');
 
-// TODO @sema: Adjust types
+// TODO Adjust types id:227 @sema:
 import type {ReactNativeType} from 'ReactNativeTypes';
 
 let ReactFabric;

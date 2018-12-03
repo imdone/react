@@ -77,7 +77,7 @@ export type UpdatePayload = Object;
 export type TimeoutHandle = TimeoutID;
 export type NoTimeout = -1;
 
-// TODO: Remove this conditional once all changes have propagated.
+// TODO: Remove this conditional once all changes have propagated. id:182
 if (registerEventHandler) {
   /**
    * Register the event emitter with the native bridge
@@ -295,7 +295,7 @@ export function prepareUpdate(
 ): null | Object {
   const viewConfig = instance.canonical.viewConfig;
   const updatePayload = diff(oldProps, newProps, viewConfig.validAttributes);
-  // TODO: If the event handlers have changed, we need to update the current props
+  // TODO: If the event handlers have changed, we need to update the current props id:101
   // in the commit phase but there is no host config hook to do it yet.
   // So instead we hack it by updating it in the render phase.
   instance.canonical.currentProps = newProps;
@@ -311,7 +311,7 @@ export function shouldDeprioritizeSubtree(type: string, props: Props): boolean {
 }
 
 export function shouldSetTextContent(type: string, props: Props): boolean {
-  // TODO (bvaughn) Revisit this decision.
+  // TODO (bvaughn) Revisit this decision. id:110
   // Always returning false simplifies the createInstance() implementation,
   // But creates an additional child Fiber for raw text children.
   // No additional native views are created though.

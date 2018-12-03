@@ -130,19 +130,19 @@ var Wedge = createReactClass({
     // we will need to let the drawing method know.
     var large = ca > Math.PI;
 
-    // TODO (sema) Please improve theses comments to make the math
+    // TODO (sema) Please improve theses comments to make the math id:25
     // more understandable.
-    //
+    // 
     // Formula for a point on a circle at a specific angle with a center
     // at (0, 0):
     // x = radius * Math.sin(radians)
     // y = radius * Math.cos(radians)
-    //
+    // 
     // For our starting point, we offset the formula using the outer
     // radius because our origin is at (top, left).
     // In typical web layout fashion, we are drawing in quadrant IV
     // (a.k.a. Southeast) where x is positive and y is negative.
-    //
+    // 
     // The arguments for path.arc and path.counterArc used below are:
     // (endX, endY, radiusX, radiusY, largeAngle)
 
