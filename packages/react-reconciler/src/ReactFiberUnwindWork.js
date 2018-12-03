@@ -112,7 +112,7 @@ function createClassErrorUpdate(
         // To preserve the preexisting retry behavior of error boundaries,
         // we keep track of which ones already failed during this batch.
         // This gets reset before we yield back to the browser.
-        // TODO: Warn in strict mode if getDerivedStateFromError is
+        // TODO: Warn in strict mode if getDerivedStateFromError is id:248
         // not defined.
         markLegacyErrorBoundaryAsFailed(this);
       }
@@ -307,7 +307,7 @@ function throwException(
       workInProgress = workInProgress.return;
     } while (workInProgress !== null);
     // No boundary was found. Fallthrough to error mode.
-    // TODO: Use invariant so the message is stripped in prod?
+    // TODO: Use invariant so the message is stripped in prod? id:321
     value = new Error(
       (getComponentName(sourceFiber.type) || 'A React component') +
         ' suspended while rendering, but no fallback UI was specified.\n' +

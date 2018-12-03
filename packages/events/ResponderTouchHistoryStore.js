@@ -56,13 +56,13 @@ type TouchEvent = {
 function timestampForTouch(touch: Touch): number {
   // The legacy internal implementation provides "timeStamp", which has been
   // renamed to "timestamp". Let both work for now while we iron it out
-  // TODO (evv): rename timeStamp to timestamp in internal code
+  // TODO (evv): rename timeStamp to timestamp in internal code id:49
   return (touch: any).timeStamp || touch.timestamp;
 }
 
 /**
- * TODO: Instead of making gestures recompute filtered velocity, we could
- * include a built in velocity computation that can be reused globally.
+ * TODO: Instead of making gestures recompute filtered velocity, we could id:30
+* include a built in velocity computation that can be reused globally.
  */
 function createTouchRecord(touch: Touch): TouchRecord {
   return {

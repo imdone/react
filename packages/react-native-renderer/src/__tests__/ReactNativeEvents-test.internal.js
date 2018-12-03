@@ -299,7 +299,7 @@ it('handles when a responder is unmounted while a touch sequence is in progress'
     1,
   );
 
-  // TODO Verify the onResponderEnd listener has been called (before the unmount)
+  // TODO Verify the onResponderEnd listener has been called (before the unmount) id:118
   // expect(log).toEqual(['one responder end']);
   // log.splice(0);
 

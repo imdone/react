@@ -249,7 +249,7 @@ export function shouldDeprioritizeSubtree(type: string, props: Props): boolean {
 }
 
 export function shouldSetTextContent(type: string, props: Props): boolean {
-  // TODO (bvaughn) Revisit this decision.
+  // TODO (bvaughn) Revisit this decision. id:303
   // Always returning false simplifies the createInstance() implementation,
   // But creates an additional child Fiber for raw text children.
   // No additional native views are created though.
@@ -400,7 +400,7 @@ export function insertInContainerBefore(
   child: Instance | TextInstance,
   beforeChild: Instance | TextInstance,
 ): void {
-  // TODO (bvaughn): Remove this check when...
+  // TODO (bvaughn): Remove this check when... id:186
   // We create a wrapper object for the container in ReactNative render()
   // Or we refactor to remove wrapper objects entirely.
   // For more info on pros/cons see PR #8560 description.

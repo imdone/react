@@ -251,7 +251,7 @@ const SimpleEventPlugin: PluginModule<MouseEvent> & {
       case DOMTopLevelEventTypes.TOP_MOUSE_DOWN:
       case DOMTopLevelEventTypes.TOP_MOUSE_MOVE:
       case DOMTopLevelEventTypes.TOP_MOUSE_UP:
-      // TODO: Disabled elements should not respond to mouse events
+      // TODO: Disabled elements should not respond to mouse events id:86
       /* falls through */
       case DOMTopLevelEventTypes.TOP_MOUSE_OUT:
       case DOMTopLevelEventTypes.TOP_MOUSE_OVER:

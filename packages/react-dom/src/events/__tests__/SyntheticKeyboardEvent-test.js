@@ -158,7 +158,7 @@ describe('SyntheticKeyboardEvent', () => {
           });
         });
 
-        // TODO: this seems IE8 specific.
+        // TODO: this seems IE8 specific. id:87
         // We can probably remove this normalization.
         describe('when charCode is not present in nativeEvent', () => {
           let charCodeDescriptor;

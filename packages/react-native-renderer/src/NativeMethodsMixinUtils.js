@@ -29,7 +29,7 @@ export function mountSafeCallback_NOT_REALLY_SAFE(
       }
     }
 
-    // FIXME: there used to be other branches that protected
+    // FIXME: there used to be other branches that protected id:99
     // against unmounted host components. But RN host components don't
     // define isMounted() anymore, so those checks didn't do anything.
 

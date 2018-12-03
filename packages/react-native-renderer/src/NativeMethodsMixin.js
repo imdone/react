@@ -131,7 +131,7 @@ export default function(
       // Fiber errors if findNodeHandle is called for an umounted component.
       // Tests using ReactTestRenderer will trigger this case indirectly.
       // Mimicking stack behavior, we should silently ignore this case.
-      // TODO Fix ReactTestRenderer so we can remove this try/catch.
+      // TODO Fix ReactTestRenderer so we can remove this try/catch. id:197
       try {
         maybeInstance = findHostInstance(this);
       } catch (error) {}
@@ -191,7 +191,7 @@ export default function(
         !NativeMethodsMixin_DEV.UNSAFE_componentWillReceiveProps,
       'Do not override existing functions.',
     );
-    // TODO (bvaughn) Remove cWM and cWRP in a future version of React Native,
+    // TODO (bvaughn) Remove cWM and cWRP in a future version of React Native, id:300
     // Once these lifecycles have been remove from the reconciler.
     NativeMethodsMixin_DEV.componentWillMount = function() {
       throwOnStylesProp(this, this.props);
@@ -210,7 +210,7 @@ export default function(
 
     // React may warn about cWM/cWRP/cWU methods being deprecated.
     // Add a flag to suppress these warnings for this special case.
-    // TODO (bvaughn) Remove this flag once the above methods have been removed.
+    // TODO (bvaughn) Remove this flag once the above methods have been removed. id:180
     NativeMethodsMixin_DEV.componentWillMount.__suppressDeprecationWarning = true;
     NativeMethodsMixin_DEV.componentWillReceiveProps.__suppressDeprecationWarning = true;
   }

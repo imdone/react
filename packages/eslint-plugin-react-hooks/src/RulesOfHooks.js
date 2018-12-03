@@ -313,7 +313,7 @@ export default {
         // Make sure all React Hooks pass our lint invariants. Log warnings
         // if not.
         for (const [segment, reactHooks] of reactHooksMap) {
-          // NOTE: We could report here that the hook is not reachable, but
+          // NOTE: We could report here that the hook is not reachable, but id:22
           // that would be redundant with more general "no unreachable"
           // lint rules.
           if (!segment.reachable) {
@@ -515,10 +515,10 @@ function getFunctionName(node) {
       // {useHook() {}}
       return node.parent.key;
 
-      // NOTE: We could also support `ClassProperty` and `MethodDefinition`
+      // NOTE: We could also support `ClassProperty` and `MethodDefinition` id:274
       // here to be pedantic. However, hooks in a class are an anti-pattern. So
       // we don't allow it to error early.
-      //
+      // 
       // class {useHook = () => {}}
       // class {useHook() {}}
     } else if (

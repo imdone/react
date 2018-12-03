@@ -120,7 +120,7 @@ const ReactNativeRenderer: ReactNativeType = {
     let root = roots.get(containerTag);
 
     if (!root) {
-      // TODO (bvaughn): If we decide to keep the wrapper component,
+      // TODO (bvaughn): If we decide to keep the wrapper component, id:208
       // We could create a wrapper for containerTag as well to reduce special casing.
       root = createContainer(containerTag, false, false);
       roots.set(containerTag, root);
@@ -133,7 +133,7 @@ const ReactNativeRenderer: ReactNativeType = {
   unmountComponentAtNode(containerTag: number) {
     const root = roots.get(containerTag);
     if (root) {
-      // TODO: Is it safe to reset this now or should I wait since this unmount could be deferred?
+      // TODO: Is it safe to reset this now or should I wait since this unmount could be deferred? id:304
       updateContainer(null, root, null, () => {
         roots.delete(containerTag);
       });

@@ -176,7 +176,7 @@ export function createInstance(
 ): Instance {
   let parentNamespace: string;
   if (__DEV__) {
-    // TODO: take namespace into account when validating.
+    // TODO: take namespace into account when validating. id:144
     const hostContextDev = ((hostContext: any): HostContextDev);
     validateDOMNesting(type, null, hostContextDev.ancestorInfo);
     if (
@@ -383,7 +383,7 @@ export function appendChildToContainer(
     (reactRootContainer === null || reactRootContainer === undefined) &&
     parentNode.onclick === null
   ) {
-    // TODO: This cast may not be sound for SVG, MathML or custom elements.
+    // TODO: This cast may not be sound for SVG, MathML or custom elements. id:77
     trapClickOnNonInteractiveElement(((parentNode: any): HTMLElement));
   }
 }
@@ -427,7 +427,7 @@ export function removeChildFromContainer(
 }
 
 export function hideInstance(instance: Instance): void {
-  // TODO: Does this work for all element types? What about MathML? Should we
+  // TODO: Does this work for all element types? What about MathML? Should we id:62
   // pass host context to this method?
   instance = ((instance: any): HTMLElement);
   instance.style.display = 'none';
@@ -528,7 +528,7 @@ export function hydrateInstance(
   internalInstanceHandle: Object,
 ): null | Array<mixed> {
   precacheFiberNode(internalInstanceHandle, instance);
-  // TODO: Possibly defer this until the commit phase where all the events
+  // TODO: Possibly defer this until the commit phase where all the events id:175
   // get attached.
   updateFiberProps(instance, props);
   let parentNamespace: string;

@@ -333,7 +333,7 @@ describe('ReactIncrementalErrorHandling', () => {
     expect(ops).toEqual(['Parent', 'BadRender', 'Sibling']);
   });
 
-  // TODO: This is currently unobservable, but will be once we lift renderRoot
+  // TODO: This is currently unobservable, but will be once we lift renderRoot id:237
   // and commitRoot into the renderer.
   // it("does not retry synchronously if there's an update between complete and commit");
 
@@ -1392,7 +1392,7 @@ describe('ReactIncrementalErrorHandling', () => {
     }
   });
 
-  // TODO: Error boundary does not catch promises
+  // TODO: Error boundary does not catch promises id:145
 
   it('continues working on siblings of a component that throws', () => {
     class ErrorBoundary extends React.Component {

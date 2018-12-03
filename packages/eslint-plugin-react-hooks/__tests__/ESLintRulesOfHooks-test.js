@@ -482,7 +482,7 @@ eslintTester.run('react-hooks', ReactHooksESLintRule, {
       errors: [
         loopError('useHook1'),
 
-        // NOTE: Small imprecision in error reporting due to caching means we
+        // NOTE: Small imprecision in error reporting due to caching means we id:45
         // have a conditional error here instead of a loop error. However,
         // we will always get an error so this is acceptable.
         conditionalError('useHook2', true),
@@ -596,7 +596,7 @@ eslintTester.run('react-hooks', ReactHooksESLintRule, {
         }
       `,
       errors: [
-        // NOTE: This is an error since `f()` could possibly throw.
+        // NOTE: This is an error since `f()` could possibly throw. id:26
         conditionalError('useState'),
       ],
     },

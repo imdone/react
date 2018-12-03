@@ -388,7 +388,7 @@ function buildTree(rootStack, readHookLog): HooksTree {
         let children = [];
         levelChildren.push({
           name: parseCustomHookName(stack[j - 1].functionName),
-          value: undefined, // TODO: Support custom inspectable values.
+          value: undefined, // TODO: Support custom inspectable values. id:19
           subHooks: children,
         });
         stackOfChildren.push(levelChildren);

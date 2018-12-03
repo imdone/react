@@ -77,7 +77,7 @@ const eventTypes = {
    * a touch start will be immediately followed by a scroll event if the view is
    * currently scrolling.
    *
-   * TODO: This shouldn't bubble.
+   * TODO: This shouldn't bubble. id:28
    */
   scrollShouldSetResponder: {
     phasedRegistrationNames: {
@@ -92,7 +92,7 @@ const eventTypes = {
    * is needed for text inputs or other views with native selection, so the
    * JS view can claim the responder.
    *
-   * TODO: This shouldn't bubble.
+   * TODO: This shouldn't bubble. id:16
    */
   selectionChangeShouldSetResponder: {
     phasedRegistrationNames: {
@@ -186,20 +186,20 @@ const eventTypes = {
  *   *current* responderInst, an `onResponderRelease` event is dispatched to the
  *   current responder, and the responder lock is released.
  *
- * TODO:
- * - on "end", a callback hook for `onResponderEndShouldRemainResponder` that
- *   determines if the responder lock should remain.
- * - If a view shouldn't "remain" the responder, any active touches should by
- *   default be considered "dead" and do not influence future negotiations or
- *   bubble paths. It should be as if those touches do not exist.
- * -- For multitouch: Usually a translate-z will choose to "remain" responder
- *  after one out of many touches ended. For translate-y, usually the view
- *  doesn't wish to "remain" responder after one of many touches end.
- * - Consider building this on top of a `stopPropagation` model similar to
- *   `W3C` events.
- * - Ensure that `onResponderTerminate` is called on touch cancels, whether or
- *   not `onResponderTerminationRequest` returns `true` or `false`.
- *
+ * TODO:  id:24
+* - on "end", a callback hook for `onResponderEndShouldRemainResponder` that
+*   determines if the responder lock should remain.
+* - If a view shouldn't "remain" the responder, any active touches should by
+*   default be considered "dead" and do not influence future negotiations or
+*   bubble paths. It should be as if those touches do not exist.
+* -- For multitouch: Usually a translate-z will choose to "remain" responder
+*  after one out of many touches ended. For translate-y, usually the view
+*  doesn't wish to "remain" responder after one of many touches end.
+* - Consider building this on top of a `stopPropagation` model similar to
+*   `W3C` events.
+* - Ensure that `onResponderTerminate` is called on touch cancels, whether or
+*   not `onResponderTerminationRequest` returns `true` or `false`.
+* 
  */
 
 /*                                             Negotiation Performed
@@ -355,7 +355,7 @@ function setResponderAndExtractTransfer(
         ? eventTypes.selectionChangeShouldSetResponder
         : eventTypes.scrollShouldSetResponder;
 
-  // TODO: stop one short of the current responder.
+  // TODO: stop one short of the current responder. id:275
   const bubbleShouldSetFrom = !responderInst
     ? targetInst
     : getLowestCommonAncestor(responderInst, targetInst);

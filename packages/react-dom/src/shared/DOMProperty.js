@@ -207,7 +207,7 @@ const properties = {};
 [
   'children',
   'dangerouslySetInnerHTML',
-  // TODO: This prevents the assignment of defaultValue to regular
+  // TODO: This prevents the assignment of defaultValue to regular id:191
   // elements (not just inputs). Now that ReactDOMInput assigns to the
   // defaultValue property -- do we need this?
   'defaultValue',
@@ -321,7 +321,7 @@ const properties = {};
   'muted',
   'selected',
 
-  // NOTE: if you add a camelCased prop to this list,
+  // NOTE: if you add a camelCased prop to this list, id:297
   // you'll need to set attributeName to name.toLowerCase()
   // instead in the assignment below.
 ].forEach(name => {
@@ -340,7 +340,7 @@ const properties = {};
   'capture',
   'download',
 
-  // NOTE: if you add a camelCased prop to this list,
+  // NOTE: if you add a camelCased prop to this list, id:171
   // you'll need to set attributeName to name.toLowerCase()
   // instead in the assignment below.
 ].forEach(name => {
@@ -360,7 +360,7 @@ const properties = {};
   'size',
   'span',
 
-  // NOTE: if you add a camelCased prop to this list,
+  // NOTE: if you add a camelCased prop to this list, id:93
   // you'll need to set attributeName to name.toLowerCase()
   // instead in the assignment below.
 ].forEach(name => {
@@ -467,7 +467,7 @@ const capitalize = token => token[1].toUpperCase();
   'xmlns:xlink',
   'x-height',
 
-  // NOTE: if you add a camelCased prop to this list,
+  // NOTE: if you add a camelCased prop to this list, id:102
   // you'll need to set attributeName to name.toLowerCase()
   // instead in the assignment below.
 ].forEach(attributeName => {
@@ -491,7 +491,7 @@ const capitalize = token => token[1].toUpperCase();
   'xlink:title',
   'xlink:type',
 
-  // NOTE: if you add a camelCased prop to this list,
+  // NOTE: if you add a camelCased prop to this list, id:193
   // you'll need to set attributeName to name.toLowerCase()
   // instead in the assignment below.
 ].forEach(attributeName => {
@@ -511,7 +511,7 @@ const capitalize = token => token[1].toUpperCase();
   'xml:lang',
   'xml:space',
 
-  // NOTE: if you add a camelCased prop to this list,
+  // NOTE: if you add a camelCased prop to this list, id:298
   // you'll need to set attributeName to name.toLowerCase()
   // instead in the assignment below.
 ].forEach(attributeName => {

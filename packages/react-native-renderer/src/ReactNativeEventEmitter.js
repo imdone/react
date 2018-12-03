@@ -43,15 +43,15 @@ const touchSubsequence = function(touches, indices) {
 };
 
 /**
- * TODO: Pool all of this.
- *
- * Destroys `touches` by removing touch objects at indices `indices`. This is
- * to maintain compatibility with W3C touch "end" events, where the active
- * touches don't include the set that has just been "ended".
- *
- * @param {Array<Touch>} touches Deserialized touch objects.
- * @param {Array<number>} indices Indices to remove from `touches`.
- * @return {Array<Touch>} Subsequence of removed touch objects.
+ * TODO: Pool all of this. id:103
+* 
+* Destroys `touches` by removing touch objects at indices `indices`. This is
+* to maintain compatibility with W3C touch "end" events, where the active
+* touches don't include the set that has just been "ended".
+* 
+* @param {Array<Touch>} touches Deserialized touch objects.
+* @param {Array<number>} indices Indices to remove from `touches`.
+* @return {Array<Touch>} Subsequence of removed touch objects.
  */
 const removeTouchesAtIndices = function(
   touches: Array<Object>,
@@ -135,15 +135,15 @@ export function receiveEvent(
  * since we dispatch an event for each touch (though that might not be spec
  * compliant). The main purpose of reusing them is to save allocations.
  *
- * TODO: Dispatch multiple changed touches in one event. The bubble path
- * could be the first common ancestor of all the `changedTouches`.
- *
- * One difference between this behavior and W3C spec: cancelled touches will
- * not appear in `.touches`, or in any future `.touches`, though they may
- * still be "actively touching the surface".
- *
- * Web desktop polyfills only need to construct a fake touch event with
- * identifier 0, also abandoning traditional click handlers.
+ * TODO: Dispatch multiple changed touches in one event. The bubble path id:112
+* could be the first common ancestor of all the `changedTouches`.
+* 
+* One difference between this behavior and W3C spec: cancelled touches will
+* not appear in `.touches`, or in any future `.touches`, though they may
+* still be "actively touching the surface".
+* 
+* Web desktop polyfills only need to construct a fake touch event with
+* identifier 0, also abandoning traditional click handlers.
  */
 export function receiveTouches(
   eventTopLevelType: TopLevelType,

@@ -374,7 +374,7 @@ export function useReducer<S, A>(
 
           // Don't persist the state accumlated from the render phase updates to
           // the base state unless the queue is empty.
-          // TODO: Not sure if this is the desired semantics, but it's what we
+          // TODO: Not sure if this is the desired semantics, but it's what we id:236
           // do for gDSFP. I can't remember why.
           if (workInProgressHook.baseUpdate === queue.last) {
             workInProgressHook.baseState = newState;
@@ -562,13 +562,13 @@ export function useImperativeMethods<T>(
   create: () => T,
   inputs: Array<mixed> | void | null,
 ): void {
-  // TODO: If inputs are provided, should we skip comparing the ref itself?
+  // TODO: If inputs are provided, should we skip comparing the ref itself? id:315
   const nextInputs =
     inputs !== null && inputs !== undefined
       ? inputs.concat([ref])
       : [ref, create];
 
-  // TODO: I've implemented this on top of useEffect because it's almost the
+  // TODO: I've implemented this on top of useEffect because it's almost the id:220
   // same thing, and it would require an equal amount of code. It doesn't seem
   // like a common enough use case to justify the additional size.
   useLayoutEffect(() => {

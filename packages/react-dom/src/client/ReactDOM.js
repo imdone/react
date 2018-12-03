@@ -8,7 +8,7 @@
  */
 
 import type {ReactNodeList} from 'shared/ReactTypes';
-// TODO: This type is shared between the reconciler and ReactDOM, but will
+// TODO: This type is shared between the reconciler and ReactDOM, but will id:72
 // eventually be lifted out to the renderer.
 import type {
   FiberRoot,
@@ -262,7 +262,7 @@ ReactBatch.prototype.commit = function() {
       // Rendering this batch again ensures its children will be the final state
       // when we flush (updates are processed in insertion order: last
       // update wins).
-      // TODO: This forces a restart. Should we print a warning?
+      // TODO: This forces a restart. Should we print a warning? id:53
       this.render(this._children);
     }
 
@@ -307,7 +307,7 @@ ReactBatch.prototype._onComplete = function() {
   if (callbacks === null) {
     return;
   }
-  // TODO: Error handling.
+  // TODO: Error handling. id:52
   for (let i = 0; i < callbacks.length; i++) {
     const callback = callbacks[i];
     callback();
@@ -324,7 +324,7 @@ type Work = {
 function ReactWork() {
   this._callbacks = null;
   this._didCommit = false;
-  // TODO: Avoid need to bind by replacing callbacks in the update queue with
+  // TODO: Avoid need to bind by replacing callbacks in the update queue with id:76
   // list of Work objects.
   this._onCommit = this._onCommit.bind(this);
 }
@@ -348,7 +348,7 @@ ReactWork.prototype._onCommit = function(): void {
   if (callbacks === null) {
     return;
   }
-  // TODO: Error handling.
+  // TODO: Error handling. id:284
   for (let i = 0; i < callbacks.length; i++) {
     const callback = callbacks[i];
     invariant(
@@ -543,7 +543,7 @@ function legacyRenderSubtreeIntoContainer(
   forceHydrate: boolean,
   callback: ?Function,
 ) {
-  // TODO: Ensure all entry points contain this check
+  // TODO: Ensure all entry points contain this check id:75
   invariant(
     isValidContainer(container),
     'Target container is not a DOM element.',
@@ -553,7 +553,7 @@ function legacyRenderSubtreeIntoContainer(
     topLevelUpdateWarnings(container);
   }
 
-  // TODO: Without `any` type, Flow says "Property cannot be accessed on any
+  // TODO: Without `any` type, Flow says "Property cannot be accessed on any id:55
   // member of intersection type." Whyyyyyy.
   let root: Root = (container._reactRootContainer: any);
   if (!root) {
@@ -612,7 +612,7 @@ function createPortal(
     isValidContainer(container),
     'Target container is not a DOM element.',
   );
-  // TODO: pass ReactDOM portal implementation as third argument
+  // TODO: pass ReactDOM portal implementation as third argument id:56
   return createPortalImpl(children, container, null, key);
 }
 
@@ -652,7 +652,7 @@ const ReactDOM: Object = {
   },
 
   hydrate(element: React$Node, container: DOMContainer, callback: ?Function) {
-    // TODO: throw or warn if we couldn't hydrate?
+    // TODO: throw or warn if we couldn't hydrate? id:79
     return legacyRenderSubtreeIntoContainer(
       null,
       element,
@@ -749,7 +749,7 @@ const ReactDOM: Object = {
   },
 
   // Temporary alias since we already shipped React 16 RC with it.
-  // TODO: remove in React 17.
+  // TODO: remove in React 17. id:285
   unstable_createPortal(...args) {
     if (!didWarnAboutUnstableCreatePortal) {
       didWarnAboutUnstableCreatePortal = true;

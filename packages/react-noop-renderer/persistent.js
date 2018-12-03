@@ -11,6 +11,6 @@
 
 const ReactNoopPersistent = require('./src/ReactNoopPersistent');
 
-// TODO: decide on the top-level export form.
+// TODO: decide on the top-level export form. id:306
 // This is hacky but makes it work with both Rollup and Jest.
 module.exports = ReactNoopPersistent.default || ReactNoopPersistent;

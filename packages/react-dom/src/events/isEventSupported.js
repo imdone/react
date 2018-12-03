@@ -10,15 +10,15 @@ import {canUseDOM} from 'shared/ExecutionEnvironment';
 /**
  * Checks if an event is supported in the current execution environment.
  *
- * NOTE: This will not work correctly for non-generic events such as `change`,
- * `reset`, `load`, `error`, and `select`.
- *
- * Borrows from Modernizr.
- *
- * @param {string} eventNameSuffix Event name, e.g. "click".
- * @return {boolean} True if the event is supported.
- * @internal
- * @license Modernizr 3.0.0pre (Custom Build) | MIT
+ * NOTE: This will not work correctly for non-generic events such as `change`, id:94
+* `reset`, `load`, `error`, and `select`.
+* 
+* Borrows from Modernizr.
+* 
+* @param {string} eventNameSuffix Event name, e.g. "click".
+* @return {boolean} True if the event is supported.
+* @internal
+* @license Modernizr 3.0.0pre (Custom Build) | MIT
  */
 function isEventSupported(eventNameSuffix) {
   if (!canUseDOM) {

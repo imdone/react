@@ -92,9 +92,9 @@ class FriendsStatusDisplay extends React.Component {
   /**
    * Verifies that by the time a child is flushed, the refs that appeared
    * earlier have already been resolved.
-   * TODO: This assumption will likely break with incremental reconciler
-   * but our internal layer API depends on this assumption. We need to change
-   * it to be more declarative before making ref resolution indeterministic.
+   * TODO: This assumption will likely break with incremental reconciler id:48
+* but our internal layer API depends on this assumption. We need to change
+* it to be more declarative before making ref resolution indeterministic.
    */
   verifyPreviousRefsResolved(flushedKey) {
     const originalKeys = this.getOriginalKeys();

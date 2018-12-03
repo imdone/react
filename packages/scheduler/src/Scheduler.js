@@ -8,7 +8,7 @@
 
 /* eslint-disable no-var */
 
-// TODO: Use symbols?
+// TODO: Use symbols? id:266
 var ImmediatePriority = 1;
 var UserBlockingPriority = 2;
 var NormalPriority = 3;
@@ -274,7 +274,7 @@ function unstable_scheduleCallback(callback, deprecated_options) {
     deprecated_options !== null &&
     typeof deprecated_options.timeout === 'number'
   ) {
-    // FIXME: Remove this branch once we lift expiration times out of React.
+    // FIXME: Remove this branch once we lift expiration times out of React. id:331
     expirationTime = startTime + deprecated_options.timeout;
   } else {
     switch (currentPriorityLevel) {
@@ -414,7 +414,7 @@ var getCurrentTime;
 // we're backgrounded we prefer for that work to happen so that the page
 // continues to load in the background. So we also schedule a 'setTimeout' as
 // a fallback.
-// TODO: Need a better heuristic for backgrounded work.
+// TODO: Need a better heuristic for backgrounded work. id:255
 var ANIMATION_FRAME_TIMEOUT = 100;
 var rAFID;
 var rAFTimeoutID;
@@ -495,7 +495,7 @@ if (globalValue && globalValue._schedMock) {
   };
 } else {
   if (typeof console !== 'undefined') {
-    // TODO: Remove fb.me link
+    // TODO: Remove fb.me link id:166
     if (typeof localRequestAnimationFrame !== 'function') {
       console.error(
         "This browser doesn't support requestAnimationFrame. " +
@@ -630,7 +630,7 @@ if (globalValue && globalValue._schedMock) {
       port.postMessage(undefined);
     } else if (!isAnimationFrameScheduled) {
       // If rAF didn't already schedule one, we need to schedule a frame.
-      // TODO: If this rAF doesn't materialize because the browser throttles, we
+      // TODO: If this rAF doesn't materialize because the browser throttles, we id:215
       // might want to still have setTimeout trigger rIC as a backup to ensure
       // that we keep performing work.
       isAnimationFrameScheduled = true;

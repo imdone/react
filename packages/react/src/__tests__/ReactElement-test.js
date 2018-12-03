@@ -28,7 +28,7 @@ describe('ReactElement', () => {
     React = require('react');
     ReactDOM = require('react-dom');
     ReactTestUtils = require('react-dom/test-utils');
-    // NOTE: We're explicitly not using JSX here. This is intended to test
+    // NOTE: We're explicitly not using JSX here. This is intended to test id:157
     // classic JS without JSX.
     ComponentClass = class extends React.Component {
       render() {
@@ -279,7 +279,7 @@ describe('ReactElement', () => {
     expect(element.props.children).toEqual([1, 2, 3]);
   });
 
-  // NOTE: We're explicitly not using JSX here. This is intended to test
+  // NOTE: We're explicitly not using JSX here. This is intended to test id:204
   // classic JS without JSX.
   it('allows static methods to be called using the type property', () => {
     class StaticMethodComponentClass extends React.Component {
@@ -293,7 +293,7 @@ describe('ReactElement', () => {
     expect(element.type.someStaticMethod()).toBe('someReturnValue');
   });
 
-  // NOTE: We're explicitly not using JSX here. This is intended to test
+  // NOTE: We're explicitly not using JSX here. This is intended to test id:262
   // classic JS without JSX.
   it('identifies valid elements', () => {
     class Component extends React.Component {
@@ -317,7 +317,7 @@ describe('ReactElement', () => {
     expect(React.isValidElement(JSON.parse(jsonElement))).toBe(true);
   });
 
-  // NOTE: We're explicitly not using JSX here. This is intended to test
+  // NOTE: We're explicitly not using JSX here. This is intended to test id:328
   // classic JS without JSX.
   it('is indistinguishable from a plain object', () => {
     const element = React.createElement('div', {className: 'foo'});
@@ -325,7 +325,7 @@ describe('ReactElement', () => {
     expect(element.constructor).toBe(object.constructor);
   });
 
-  // NOTE: We're explicitly not using JSX here. This is intended to test
+  // NOTE: We're explicitly not using JSX here. This is intended to test id:249
   // classic JS without JSX.
   it('should use default prop value when removing a prop', () => {
     class Component extends React.Component {
@@ -346,7 +346,7 @@ describe('ReactElement', () => {
     expect(instance.props.fruit).toBe('persimmon');
   });
 
-  // NOTE: We're explicitly not using JSX here. This is intended to test
+  // NOTE: We're explicitly not using JSX here. This is intended to test id:159
   // classic JS without JSX.
   it('should normalize props with default values', () => {
     class Component extends React.Component {
@@ -432,7 +432,7 @@ describe('ReactElement', () => {
     expect(test.props.value).toBeNaN();
   });
 
-  // NOTE: We're explicitly not using JSX here. This is intended to test
+  // NOTE: We're explicitly not using JSX here. This is intended to test id:206
   // classic JS without JSX.
   it('identifies elements, but not JSON, if Symbols are supported', () => {
     // Rudimentary polyfill

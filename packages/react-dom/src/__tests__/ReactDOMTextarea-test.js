@@ -512,7 +512,7 @@ describe('ReactDOMTextarea', () => {
       ReactDOM.render(<textarea defaultValue={Symbol('foobar')} />, container);
       const node = container.firstChild;
 
-      // TODO: defaultValue is a reserved prop and is not validated. Check warnings when they are.
+      // TODO: defaultValue is a reserved prop and is not validated. Check warnings when they are. id:46
       expect(node.value).toBe('');
     });
 
@@ -522,7 +522,7 @@ describe('ReactDOMTextarea', () => {
       ReactDOM.render(<textarea defaultValue={Symbol('foobar')} />, container);
       const node = container.firstChild;
 
-      // TODO: defaultValue is a reserved prop and is not validated. Check warnings when they are.
+      // TODO: defaultValue is a reserved prop and is not validated. Check warnings when they are. id:71
       expect(node.value).toBe('foo');
     });
   });
@@ -573,7 +573,7 @@ describe('ReactDOMTextarea', () => {
       ReactDOM.render(<textarea defaultValue={() => {}} />, container);
       const node = container.firstChild;
 
-      // TODO: defaultValue is a reserved prop and is not validated. Check warnings when they are.
+      // TODO: defaultValue is a reserved prop and is not validated. Check warnings when they are. id:282
       expect(node.value).toBe('');
     });
 
@@ -583,7 +583,7 @@ describe('ReactDOMTextarea', () => {
       ReactDOM.render(<textarea defaultValue={() => {}} />, container);
       const node = container.firstChild;
 
-      // TODO: defaultValue is a reserved prop and is not validated. Check warnings when they are.
+      // TODO: defaultValue is a reserved prop and is not validated. Check warnings when they are. id:70
       expect(node.value).toBe('foo');
     });
   });

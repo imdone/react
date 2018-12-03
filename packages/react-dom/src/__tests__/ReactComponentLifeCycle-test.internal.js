@@ -28,7 +28,7 @@ describe('ReactComponentLifeCycle', () => {
     jest.resetModules();
   });
 
-  // TODO (RFC #6) Merge this back into ReactComponentLifeCycles-test once
+  // TODO (RFC #6) Merge this back into ReactComponentLifeCycles-test once id:23
   // the 'warnAboutDeprecatedLifecycles' feature flag has been removed.
   it('warns about deprecated unsafe lifecycles', function() {
     class MyComponent extends React.Component {

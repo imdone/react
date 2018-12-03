@@ -94,7 +94,7 @@ class Surface extends React.Component {
     // ART's properties.
     const props = this.props;
 
-    // TODO: ART's Canvas Mode overrides surface title and cursor
+    // TODO: ART's Canvas Mode overrides surface title and cursor id:276
     const Tag = Mode.Surface.tagName;
 
     return (

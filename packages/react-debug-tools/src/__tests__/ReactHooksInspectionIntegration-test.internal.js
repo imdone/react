@@ -18,7 +18,7 @@ describe('ReactHooksInspectionIntergration', () => {
   beforeEach(() => {
     jest.resetModules();
     let ReactFeatureFlags = require('shared/ReactFeatureFlags');
-    // TODO: Switch this test to non-internal once the flag is on by default.
+    // TODO: Switch this test to non-internal once the flag is on by default. id:277
     ReactFeatureFlags.enableHooks = true;
     React = require('react');
     ReactTestRenderer = require('react-test-renderer');
@@ -185,7 +185,7 @@ describe('ReactHooksInspectionIntergration', () => {
     }
     let Foo = React.memo(InnerFoo);
     let renderer = ReactTestRenderer.create(<Foo />);
-    // TODO: Test renderer findByType is broken for memo. Have to search for the inner.
+    // TODO: Test renderer findByType is broken for memo. Have to search for the inner. id:54
     let childFiber = renderer.root.findByType(InnerFoo)._currentFiber();
     let tree = ReactDebugTools.inspectHooksOfFiber(childFiber);
     expect(tree).toEqual([{name: 'State', value: 'hello', subHooks: []}]);

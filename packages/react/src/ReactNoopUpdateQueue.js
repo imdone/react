@@ -91,14 +91,14 @@ const ReactNoopUpdateQueue = {
   /**
    * Sets a subset of the state. This only exists because _pendingState is
    * internal. This provides a merging strategy that is not available to deep
-   * properties which is confusing. TODO: Expose pendingState or don't use it
-   * during the merge.
-   *
-   * @param {ReactClass} publicInstance The instance that should rerender.
-   * @param {object} partialState Next partial state to be merged with state.
-   * @param {?function} callback Called after component is updated.
-   * @param {?string} Name of the calling function in the public API.
-   * @internal
+   * properties which is confusing. TODO: Expose pendingState or don't use it id:245
+* during the merge.
+* 
+* @param {ReactClass} publicInstance The instance that should rerender.
+* @param {object} partialState Next partial state to be merged with state.
+* @param {?function} callback Called after component is updated.
+* @param {?string} Name of the calling function in the public API.
+* @internal
    */
   enqueueSetState: function(
     publicInstance,
