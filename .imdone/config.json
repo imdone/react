@@ -1,9 +1,32 @@
 {
-  "exclude": [
-    "^(node_modules|bower_components|\\.imdone|target|build|dist|logs|flow-typed|imdone-export.json)[\\/\\\\]?|\\.(git|svn|hg|npmignore)|\\~$|\\.(jpg|png|gif|swp|ttf|otf)$"
+  "noHelp": true,
+  "sync": {
+    "useImdoneioForPriority": true,
+    "name": "imdone/react",
+    "id": "5b6c81fe6a9c5c07479be321"
+  },
+  "marked": {
+    "langPrefix": "language-",
+    "smartLists": true,
+    "pedantic": false,
+    "breaks": false,
+    "tables": true,
+    "gfm": true
+  },
+  "lists": [
+    {
+      "hidden": false,
+      "name": "HELP"
+    },
+    {
+      "hidden": false,
+      "name": "TODO"
+    },
+    {
+      "hidden": false,
+      "name": "NOTE"
+    }
   ],
-  "watcher": true,
-  "keepEmptyPriority": true,
   "code": {
     "include_lists": [
       "TODO",
@@ -22,44 +45,9 @@
       "HELP"
     ]
   },
-  "lists": [
-    {
-      "name": "HELP",
-      "hidden": false
-    },
-    {
-      "hidden": false,
-      "name": "DONE"
-    },
-    {
-      "name": "TODO",
-      "hidden": false
-    },
-    {
-      "name": "NOTE",
-      "hidden": false
-    },
-    {
-      "name": "FIXME",
-      "hidden": false
-    },
-    {
-      "name": "HACK",
-      "hidden": false
-    }
-  ],
-  "marked": {
-    "gfm": true,
-    "tables": true,
-    "breaks": false,
-    "pedantic": false,
-    "smartLists": true,
-    "langPrefix": "language-"
-  },
-  "sync": {
-    "id": "5c053fc726df05d18b79f5d2",
-    "name": "imdone/react",
-    "useImdoneioForPriority": true
-  },
-  "noHelp": true
+  "keepEmptyPriority": true,
+  "watcher": true,
+  "exclude": [
+    "^(node_modules|bower_components|\\.imdone|target|build|dist|logs|flow-typed|imdone-export.json)[\\/\\\\]?|\\.(git|svn|hg|npmignore)|\\~$|\\.(jpg|png|gif|swp|ttf|otf)$"
+  ]
 }
